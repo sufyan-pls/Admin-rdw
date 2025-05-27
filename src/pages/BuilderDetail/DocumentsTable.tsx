@@ -27,7 +27,6 @@ const DocumentsTable = () => {
                 style={{ maxWidth: 300, display: 'inline-block', background: '#1a1d21', border: '1px solid #e5e7eb' }}
                 />
                 </div>
-               
             </CardHeader>
             {/* <CardBody>
                 <TableContainer
