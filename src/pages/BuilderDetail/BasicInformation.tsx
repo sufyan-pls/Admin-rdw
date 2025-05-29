@@ -64,7 +64,7 @@ const BasicInformation = () => {
                                 <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Created At</span>
                                 <span className="text-muted" style={{ fontSize: 15, whiteSpace: 'nowrap' }}>{info.createdAt}</span>
                             </Col>
-                            <Col className="d-flex flex-column">
+                            <Col className="d-flex flex-column mt-2">
                                 <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Status</span>
                                 <div className="d-flex align-items-center">
                                     <Dropdown isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)} direction="down">
