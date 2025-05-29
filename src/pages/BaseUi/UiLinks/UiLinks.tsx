@@ -13,7 +13,13 @@ const UiLink = () => {
             <UiContent />
             <div className="page-content">
                 <Container fluid>
-                    <BreadCrumb title="Colored Link" pageTitle="Base UI" />
+                    <BreadCrumb 
+                        title="Colored Link" 
+                        pageTitles={[
+                            { label: "Base UI", path: "/base-ui" },
+                            { label: "Colored Link" }
+                        ]}
+                    />
                     <Row>
                         <Col lg={6}>
                             <Card>
@@ -77,7 +83,7 @@ const UiLink = () => {
                             <Card>
                                 <PreviewCardHeader title="Link Opacity" />
                                 <CardBody>
-                                    <p>Change the alpha opacity of the link <code>rgba()</code> color value with utilities. Please be aware that changes to a color’s opacity can lead to links with <Link to="https://getbootstrap.com/docs/5.3/getting-started/accessibility/#color-contrast" target="_blank"><em>insufficient</em> contrast</Link>.</p>
+                                    <p>Change the alpha opacity of the link <code>rgba()</code> color value with utilities. Please be aware that changes to a color's opacity can lead to links with <Link to="https://getbootstrap.com/docs/5.3/getting-started/accessibility/#color-contrast" target="_blank"><em>insufficient</em> contrast</Link>.</p>
                                     <div className='live-preview'>
                                         <p><Link className="link-opacity-10" to="#">Link opacity 10</Link></p>
                                         <p><Link className="link-opacity-25" to="#">Link opacity 25</Link></p>
@@ -128,7 +134,7 @@ const UiLink = () => {
                             <Card>
                                 <PreviewCardHeader title="Underline color" />
                                 <CardBody>
-                                    <p className="text-muted">Change the underline’s color independent of the link text color.</p>
+                                    <p className="text-muted">Change the underline's color independent of the link text color.</p>
                                     <div className='live-preview'>
                                         <p><Link to="#" className="text-decoration-underline link-underline-primary">Primary underline</Link></p>
                                         <p><Link to="#" className="text-decoration-underline link-underline-secondary">Secondary underline</Link></p>
@@ -154,7 +160,7 @@ const UiLink = () => {
                             <Card>
                                 <PreviewCardHeader title="Underline opacity" />
                                 <CardBody>
-                                    <p className="text-muted">Change the underline’s opacity. Requires adding <code>.link-underline</code> to first set an <code>rgba()</code> color we use to then modify the alpha opacity.</p>
+                                    <p className="text-muted">Change the underline's opacity. Requires adding <code>.link-underline</code> to first set an <code>rgba()</code> color we use to then modify the alpha opacity.</p>
                                     <div className='live-preview'>
                                         <p><Link className="link-offset-2 text-decoration-underline link-underline link-underline-opacity-0" to="#">Underline opacity 0</Link></p>
                                         <p><Link className="link-offset-2 text-decoration-underline link-underline link-underline-opacity-10" to="#">Underline opacity 10</Link></p>
@@ -178,7 +184,7 @@ const UiLink = () => {
                             <Card>
                                 <PreviewCardHeader title="Underline offset" />
                                 <CardBody>
-                                    <p className="text-muted">Change the underline’s distance from your text. Offset is set in <code>em</code> units to automatically scale with the element’s current <code>font-size</code>.</p>
+                                    <p className="text-muted">Change the underline's distance from your text. Offset is set in <code>em</code> units to automatically scale with the element's current <code>font-size</code>.</p>
                                     <div className='live-preview'>
                                         <p><Link to="#">Default link</Link></p>
                                         <p><Link className="text-decoration-underline link-offset-1" to="#">Offset 1 link</Link></p>

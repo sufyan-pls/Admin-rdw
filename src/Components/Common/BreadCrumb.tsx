@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Row } from 'reactstrap';
 
-const BreadCrumb = ({ title, pageTitle }: any) => {
+interface BreadCrumbProps {
+    title: string;
+    pageTitles: { label: string; path?: string }[]; // path is optional for non-link items
+}
+
+const BreadCrumb = ({ title, pageTitles }: BreadCrumbProps) => {
     return (
         <React.Fragment>
             <Row>
@@ -12,8 +17,19 @@ const BreadCrumb = ({ title, pageTitle }: any) => {
 
                         <div className="page-title-right">
                             <ol className="breadcrumb m-0">
-                                <li className="breadcrumb-item"><Link to="#">{pageTitle}</Link></li>
-                                <li className="breadcrumb-item active">{title}</li>
+                                {pageTitles.map((item, idx) => (
+                                    <li
+                                        key={idx}
+                                        className={`breadcrumb-item${idx === pageTitles.length - 1 ? ' active' : ''}`}
+                                        aria-current={idx === pageTitles.length - 1 ? 'page' : undefined}
+                                    >
+                                        {idx === pageTitles.length - 1 || !item.path ? (
+                                            item.label
+                                        ) : (
+                                            <Link to={item.path}>{item.label}</Link>
+                                        )}
+                                    </li>
+                                ))}
                             </ol>
                         </div>
 
