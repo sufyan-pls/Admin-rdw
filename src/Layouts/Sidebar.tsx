@@ -41,7 +41,7 @@ const Sidebar = ({ layoutType }:any) => {
       <div className="app-menu navbar-menu">
         <div className="navbar-brand-box">
           <Link to="/" className="logo logo-dark">
-            <span className="logo-sm">
+            <span className="logo-lg">
               <img src={realwealtdyFooterLogo} alt="" height="22" />
             </span>
             <span className="logo-lg">

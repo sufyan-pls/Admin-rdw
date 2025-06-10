@@ -88,6 +88,17 @@ const builderDetailWidgets = [
     },
 ];
 
+const builderData = [
+    { id: '#737', name: 'Floyd Miles', email: 'kenzi.lawson@example.com', phone: '(684) 555-0102', created: '22 Oct, 2020 12:30 PM', updated: '22 Oct, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Eleanor Pena', email: 'deanna.curtis@example.com', phone: '(316) 555-0116', created: '24 May, 2020 12:30 PM', updated: '24 May, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Arlene McCoy', email: 'debbie.baker@example.com', phone: '(405) 555-0128', created: '21 Sep, 2020 12:30 PM', updated: '21 Sep, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Wade Warren', email: 'jessica.hanson@example.com', phone: '(480) 555-0103', created: '17 Oct, 2020 12:30 PM', updated: '17 Oct, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Annette Black', email: 'alma.lawson@example.com', phone: '(808) 555-0111', created: '8 Sep, 2020 12:30 PM', updated: '8 Sep, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Cody Fisher', email: 'sara.cruz@example.com', phone: '(252) 555-0126', created: '8 Sep, 2020 12:30 PM', updated: '8 Sep, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Marvin McKinney', email: 'debra.holt@example.com', phone: '(704) 555-0127', created: '24 May, 2020 12:30 PM', updated: '24 May, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Cameron Williamson', email: 'willie.jennings@example.com', phone: '(209) 555-0104', created: '1 Feb, 2020 12:30 PM', updated: '1 Feb, 2020 12:30 PM', status: 'Suspended' },
+];
+
 const forRentListingData = [
     {
         propertyId: '#4564',
@@ -440,4 +451,46 @@ const ArchivedListingData = [
     },
 ];
 
-export { builderWidgets, builderDetailWidgets, forRentListingData, SoldListingData, RentedListingData, ArchivedListingData};
+const documentsData = [
+    {
+        documentId: '1',
+        fileName: 'file1.pdf',
+        description: 'desc',
+        type: 'PDF',
+        size: '1MB',
+        createdAt: '2024-06-01',
+        updatedAt: '2024-06-02',
+        status: 'pending', // backend se aane wala status
+        downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+    },
+    {
+        documentId: '2',
+        fileName: 'file2.pdf',
+        description: 'desc',
+        type: 'PDF',
+        size: '1MB',
+        createdAt: '2024-06-01',
+        updatedAt: '2024-06-02',
+        status: 'approve', // backend se aane wala status
+        downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+    },
+    {
+        documentId: '3',
+        fileName: 'file3.pdf',
+        description: 'desc',
+        type: 'PDF',
+        size: '1MB',
+        createdAt: '2024-06-01',
+        updatedAt: '2024-06-02',
+        status: 'reject', // backend se aane wala status
+        downloadUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+    },
+];
+
+const focalPersonData = [
+    { id: '#737', name: 'Floyd Miles', email: 'kenzi.lawson@example.com', phoneNumber: '(684) 555-0102',roleAssigned: 'Admin', createdAt: '22 Oct, 2020 12:30 PM', updatedAt: '22 Oct, 2020 12:30 PM', status: 'pending' },
+    { id: '#737', name: 'Eleanor Pena', email: 'deanna.curtis@example.com', phoneNumber: '(316) 555-0116',roleAssigned: 'Editor', createdAt: '24 May, 2020 12:30 PM', updatedAt: '24 May, 2020 12:30 PM', status: 'approved' },
+    { id: '#737', name: 'Arlene McCoy', email: 'debbie.baker@example.com', phoneNumber: '(405) 555-0128',roleAssigned: 'Viewer', createdAt: '21 Sep, 2020 12:30 PM', updatedAt: '21 Sep, 2020 12:30 PM', status: 'pending' },
+];
+
+export { builderWidgets, builderDetailWidgets, forRentListingData, SoldListingData, RentedListingData, ArchivedListingData, builderData, documentsData, focalPersonData};

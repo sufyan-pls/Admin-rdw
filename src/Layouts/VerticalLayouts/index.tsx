@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import withRouter from "../../Components/Common/withRouter";
 import { Collapse } from 'reactstrap';
 
@@ -13,6 +13,7 @@ import { createSelector } from 'reselect';
 
 const VerticalLayout = (props:any) => {
     const navData = navdata().props.children;
+    const location = useLocation();
 
     /*
  layout settings
@@ -100,6 +101,18 @@ const VerticalLayout = (props:any) => {
         }
     }, [props.router.location.pathname, props.layoutType]);
 
+    useEffect(() => {
+        const builderPaths = ["/builder", "/builder-detail/", "/listing-detail"];
+        const builderLink = document.getElementById("sidebar-builder-link");
+        if (builderLink) {
+            if (builderPaths.includes(location.pathname)) {
+                builderLink.classList.add("active");
+            } else {
+                builderLink.classList.remove("active");
+            }
+        }
+    }, [location.pathname]);
+
     function activateParentDropdown(item:any) {
 
         item.classList.add("active");
@@ -151,6 +164,8 @@ const VerticalLayout = (props:any) => {
         <React.Fragment>
             {/* menu Items */}
             {(navData || []).map((item:any, key:number) => {
+                // Identify the Builder link
+                const isBuilder = item.link && item.link.includes("/builder");
                 return (
                     <React.Fragment key={key}>
                         {/* Main Header */}
@@ -160,6 +175,7 @@ const VerticalLayout = (props:any) => {
                                 (item.subItems ? (
                                     <li className="nav-item">
                                         <Link
+                                            id={isBuilder ? "sidebar-builder-link" : undefined}
                                             onClick={item.click}
                                             className="nav-link menu-link"
                                             to={item.link ? item.link : "/#"}
@@ -246,6 +262,7 @@ const VerticalLayout = (props:any) => {
                                 ) : (
                                     <li className="nav-item">
                                         <Link
+                                            id={isBuilder ? "sidebar-builder-link" : undefined}
                                             className="nav-link menu-link"
                                             to={item.link ? item.link : "/#"}>
                                             <i className={item.icon}></i> <span>{props.t(item.label)}</span>
