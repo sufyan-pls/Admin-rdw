@@ -19,13 +19,7 @@ const DashboardAnalytics = () => {
         <React.Fragment>
             <div className="page-content">
                 <Container fluid>                              
-                    <BreadCrumb 
-                        title="Analytics" 
-                        pageTitles={[
-                            { label: "Dashboard", path: "/dashboard" },
-                            { label: "Analytics" }
-                        ]}
-                    />
+                    <BreadCrumb title="Analytics" />
                     <Row>
                         <Col xxl={5}>
                             <UpgradeAccountNotise />

@@ -86,7 +86,7 @@ const builderDetailWidgets = [
     prefix: "$",
     separator: ",",
   },
-];
+
 
 const builderData = [
     { id: '#737', name: 'Floyd Miles', email: 'kenzi.lawson@example.com', phone: '(684) 555-0102', created: '22 Oct, 2020 12:30 PM', updated: '22 Oct, 2020 12:30 PM', status: 'Active' },
@@ -97,6 +97,7 @@ const builderData = [
     { id: '#737', name: 'Cody Fisher', email: 'sara.cruz@example.com', phone: '(252) 555-0126', created: '8 Sep, 2020 12:30 PM', updated: '8 Sep, 2020 12:30 PM', status: 'Active' },
     { id: '#737', name: 'Marvin McKinney', email: 'debra.holt@example.com', phone: '(704) 555-0127', created: '24 May, 2020 12:30 PM', updated: '24 May, 2020 12:30 PM', status: 'Active' },
     { id: '#737', name: 'Cameron Williamson', email: 'willie.jennings@example.com', phone: '(209) 555-0104', created: '1 Feb, 2020 12:30 PM', updated: '1 Feb, 2020 12:30 PM', status: 'Suspended' },
+
 ];
 
 const forRentListingData = [
@@ -449,6 +450,7 @@ const ArchivedListingData = [
     updatedAt: "26 Aug, 2022 03:10 PM",
     status: "Archived",
   },
+
 ];
 
 const documentsData = [
@@ -494,3 +496,4 @@ const focalPersonData = [
 ];
 
 export { builderWidgets, builderDetailWidgets, forRentListingData, SoldListingData, RentedListingData, ArchivedListingData, builderData, documentsData, focalPersonData};
+
