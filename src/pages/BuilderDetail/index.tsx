@@ -11,13 +11,7 @@ const BuilderDetail = () => {
         <React.Fragment>
             <div className="page-content">
                 <Container fluid>
-                    <BreadCrumb 
-                        title="Builder Detail" 
-                        pageTitles={[
-                            { label: "Builder", path: "/builder" },
-                            { label: "Builder Detail" }
-                        ]}
-                    />
+                    <BreadCrumb title="Builder Detail" pageTitle="Builder" />
                     <div >
                         <Widgets />
                     </div>

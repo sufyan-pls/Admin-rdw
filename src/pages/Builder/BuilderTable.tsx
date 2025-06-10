@@ -3,7 +3,17 @@ import { Card, CardBody, CardHeader, Nav, NavItem, NavLink, TabContent, TabPane,
 import classnames from 'classnames';
 import EditBuilderModal from './EditBuilderModal';
 import { useNavigate } from 'react-router-dom';
-import { builderData } from 'common/data/builder';
+
+const staticData = [
+    { id: '#737', name: 'Floyd Miles', email: 'kenzi.lawson@example.com', phone: '(684) 555-0102', created: '22 Oct, 2020 12:30 PM', updated: '22 Oct, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Eleanor Pena', email: 'deanna.curtis@example.com', phone: '(316) 555-0116', created: '24 May, 2020 12:30 PM', updated: '24 May, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Arlene McCoy', email: 'debbie.baker@example.com', phone: '(405) 555-0128', created: '21 Sep, 2020 12:30 PM', updated: '21 Sep, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Wade Warren', email: 'jessica.hanson@example.com', phone: '(480) 555-0103', created: '17 Oct, 2020 12:30 PM', updated: '17 Oct, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Annette Black', email: 'alma.lawson@example.com', phone: '(808) 555-0111', created: '8 Sep, 2020 12:30 PM', updated: '8 Sep, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Cody Fisher', email: 'sara.cruz@example.com', phone: '(252) 555-0126', created: '8 Sep, 2020 12:30 PM', updated: '8 Sep, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Marvin McKinney', email: 'debra.holt@example.com', phone: '(704) 555-0127', created: '24 May, 2020 12:30 PM', updated: '24 May, 2020 12:30 PM', status: 'Active' },
+    { id: '#737', name: 'Cameron Williamson', email: 'willie.jennings@example.com', phone: '(209) 555-0104', created: '1 Feb, 2020 12:30 PM', updated: '1 Feb, 2020 12:30 PM', status: 'Suspended' },
+];
 
 type StatusType = 'Active' | 'Suspended' | 'Rejected';
 
@@ -21,7 +31,7 @@ const BuilderTable = () => {
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
 
-    const filteredData = builderData.filter(row =>
+    const filteredData = staticData.filter(row =>
         row.name.toLowerCase().includes(search.toLowerCase()) ||
         row.email.toLowerCase().includes(search.toLowerCase()) ||
         row.phone.toLowerCase().includes(search.toLowerCase())
@@ -84,7 +94,7 @@ const BuilderTable = () => {
                             placeholder="Search"
                             value={search}
                             onChange={e => { setSearch(e.target.value); setCurrentPage(1); }}
-                            style={{ maxWidth: 300, display: 'inline-block', border: '1px solid #e5e7eb' }}
+                            style={{ maxWidth: 300, display: 'inline-block', background: '#1a1d21', border: '1px solid #e5e7eb' }}
                             className="rounded-2 px-4 py-2"
                         />
                     </Col>
@@ -94,7 +104,7 @@ const BuilderTable = () => {
                 <TabContent activeTab={activeTab} className="pt-3">
                     <TabPane tabId="1">
                         <div className="table-responsive">
-                            <Table className="align-middle table-nowrap mb-0" style={{ minWidth: 900 }}>
+                            <Table className="align-middle paginationTable" style={{ minWidth: 900 }}>
                                 <thead>
                                     <tr>
                                         <th>ID <span style={{ fontSize: '1rem', verticalAlign: 'middle' }}></span></th>

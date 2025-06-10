@@ -10,13 +10,7 @@ return (
     <React.Fragment>
         <div className="page-content">
             <Container fluid>
-                <BreadCrumb 
-                    title="Builder" 
-                    pageTitles={[
-                        { label: "RealWealtdy", path: "/" },
-                        { label: "Builder" }
-                    ]}
-                />
+                <BreadCrumb title="Builder" pageTitle="RealWealtdy" />
                 <Row>
                     <Widgets />
                 </Row>
