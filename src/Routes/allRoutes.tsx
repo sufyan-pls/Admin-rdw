@@ -246,13 +246,15 @@ import PageBlogOverview from "pages/Pages/Blogs/Overview";
 // Builder
 import Builder from "pages/Builder";
 import BuilderDetail from "pages/BuilderDetail";
-import DocumentsTable from "pages/BuilderDetail/DocumentsTable";
-import Documents from "pages/Documents";
-import SettingsUI from "pages/Settings";
-import path from "path";
-import SupportUI from "pages/Support";
-import Revenue from "pages/Revenue";
+
+import ListingDetail from "pages/ListingDetail";
 import Refunds from "pages/Revenue/Refund";
+import Revenue from "pages/Revenue";
+import SupportUI from "pages/Support";
+import SettingsUI from "pages/Settings";
+import Documents from "pages/Documents";
+
+
 
 const authProtectedRoutes = [
   // Builder
