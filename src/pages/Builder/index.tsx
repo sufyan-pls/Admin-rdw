@@ -8,21 +8,15 @@ const Builder = () => {
   document.title = "Builder";
   return (
     <React.Fragment>
-        <div className="page-content">
-            <Container fluid>
-                <BreadCrumb 
-                    title="Builder" 
-                    pageTitles={[
-                        { label: "RealWealtdy", path: "/" },
-                        { label: "Builder" }
-                    ]}
-                />
-                <Row>
-                    <Widgets />
-                </Row>
-                <BuilderTable />       
-            </Container>
-        </div>
+      <div className="page-content">
+        <Container fluid>
+          <BreadCrumb title="Builder" pageTitle="RealWealtdy" />
+          <Row>
+            <Widgets />
+          </Row>
+          <BuilderTable />
+        </Container>
+      </div>
     </React.Fragment>
   );
 };

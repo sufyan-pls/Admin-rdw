@@ -246,6 +246,7 @@ import PageBlogOverview from "pages/Pages/Blogs/Overview";
 // Builder
 import Builder from "pages/Builder";
 import BuilderDetail from "pages/BuilderDetail";
+
 import ListingDetail from "pages/ListingDetail";
 import Refunds from "pages/Revenue/Refund";
 import Revenue from "pages/Revenue";
@@ -254,11 +255,11 @@ import SettingsUI from "pages/Settings";
 import Documents from "pages/Documents";
 
 
+
 const authProtectedRoutes = [
   // Builder
   { path: "/builder", component: <Builder /> },
   { path: "/builder-detail", component: <BuilderDetail /> },
-  { path: "/listing-detail", component: <ListingDetail /> },
 
   //Documents
   { path: "/documents", component: <Documents /> },
