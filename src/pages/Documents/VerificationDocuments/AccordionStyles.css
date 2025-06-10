@@ -1,0 +1,30 @@
+/* Accordion Animation Styles */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+  will-change: max-height, opacity;
+}
+
+.accordion-content.open {
+  max-height: 1000px; /* Adjust based on your content's maximum height */
+  opacity: 1;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-icon.rotated {
+  transform: rotate(90deg);
+}
+
+tr.accordion-row {
+  border: none;
+}
+
+tr.accordion-row td {
+  padding: 0;
+  border: 0;
+}
