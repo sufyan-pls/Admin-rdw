@@ -13,7 +13,13 @@ const SettingsUI = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <BreadCrumb title="Settings" pageTitle="RealWealtdy" />
+          <BreadCrumb 
+            title="Settings" 
+            pageTitles={[
+              { label: "RealWealtdy", path: "/" },
+              { label: "Settings" }
+            ]}
+          />
           {/* <Row>
             <Widgets />
           </Row> */}

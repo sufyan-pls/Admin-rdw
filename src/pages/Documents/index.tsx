@@ -12,7 +12,13 @@ const Documents = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <BreadCrumb title="Documents" pageTitle="RealWealtdy" />
+          <BreadCrumb 
+            title="Documents" 
+            pageTitles={[
+              { label: "RealWealtdy", path: "/" },
+              { label: "Documents" }
+            ]}
+          />
           {/* <Row>
             <Widgets />
           </Row> */}
