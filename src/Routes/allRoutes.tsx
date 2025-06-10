@@ -246,6 +246,7 @@ import PageBlogOverview from "pages/Pages/Blogs/Overview";
 // Builder
 import Builder from "pages/Builder";
 import BuilderDetail from "pages/BuilderDetail";
+import ListingDetail from "pages/ListingDetail";
 
 
 const authProtectedRoutes = [
@@ -253,7 +254,7 @@ const authProtectedRoutes = [
   // Builder
   { path: "/builder", component: <Builder /> },
   { path: "/builder-detail", component: <BuilderDetail /> },
-  
+  { path: "/listing-detail", component: <ListingDetail /> },
 
 
   { path: "/dashboard-analytics", component: <DashboardAnalytics /> },

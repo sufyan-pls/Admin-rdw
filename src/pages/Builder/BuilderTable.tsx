@@ -84,7 +84,7 @@ const BuilderTable = () => {
                             placeholder="Search"
                             value={search}
                             onChange={e => { setSearch(e.target.value); setCurrentPage(1); }}
-                            style={{ maxWidth: 300, display: 'inline-block', background: '#1a1d21', border: '1px solid #e5e7eb' }}
+                            style={{ maxWidth: 300, display: 'inline-block', border: '1px solid #e5e7eb' }}
                             className="rounded-2 px-4 py-2"
                         />
                     </Col>

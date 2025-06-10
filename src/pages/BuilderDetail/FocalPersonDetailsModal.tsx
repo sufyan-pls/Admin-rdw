@@ -142,11 +142,9 @@ const FocalPersonDetailsModal = ({ isOpen, toggle, user }: any) => {
                                             caret
                                             color="light"
                                             className="w-100 text-start px-2 py-1"
-                                            style={{
-                                                background: '#23272b',
+                                            style={{                                  
                                                 fontWeight: 500,
                                                 fontSize: 15,
-                                                color: '#fff',
                                                 border: '1px solid ', // Yeh line add kar dein
                                                 borderRadius: 6
                                             }}

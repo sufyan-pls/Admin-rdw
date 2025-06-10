@@ -93,7 +93,7 @@ const FocalPersonTable = () => {
                             type="text"
                             placeholder="Search"
                             className="rounded-2  py-2 mb-3"
-                            style={{ maxWidth: 300, display: 'inline-block', background: '#1a1d21', border: '1px solid #e5e7eb' }}
+                            style={{ maxWidth: 300, display: 'inline-block', border: '1px solid #e5e7eb' }}
                         />
                     </div>
                 </CardHeader>
