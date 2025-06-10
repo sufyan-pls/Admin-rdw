@@ -5,21 +5,21 @@ import EditBuilderModal from './EditBuilderModal';
 import { useNavigate } from 'react-router-dom';
 import { builderData } from 'common/data/builder';
 
-type StatusType = 'Active' | 'Suspended' | 'Rejected';
+type StatusType = "Active" | "Suspended" | "Rejected";
 
 const statusColor: Record<StatusType, string> = {
-    'Active': 'secondary',
-    'Suspended': 'warning',
-    'Rejected': 'danger',
+  Active: "secondary",
+  Suspended: "warning",
+  Rejected: "danger",
 };
 
 const BuilderTable = () => {
-    const [activeTab, setActiveTab] = useState('1');
-    const [search, setSearch] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 8;
-    const [editModalOpen, setEditModalOpen] = useState(false);
-    const [selectedUser, setSelectedUser] = useState(null);
+  const [activeTab, setActiveTab] = useState("1");
+  const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 8;
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
     const filteredData = builderData.filter(row =>
         row.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -27,15 +27,18 @@ const BuilderTable = () => {
         row.phone.toLowerCase().includes(search.toLowerCase())
     );
 
-    const paginatedData = filteredData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
-    const totalPages = Math.ceil(filteredData.length / pageSize);
+  const paginatedData = filteredData.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+  const totalPages = Math.ceil(filteredData.length / pageSize);
 
-    const handleEdit = (user: any) => {
-        setSelectedUser(user);
-        setEditModalOpen(true);
-    };
+  const handleEdit = (user: any) => {
+    setSelectedUser(user);
+    setEditModalOpen(true);
+  };
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
     return (
         <Card className="mt-1">
@@ -171,4 +174,4 @@ const BuilderTable = () => {
     );
 };
 
-export default BuilderTable; 
+export default BuilderTable;

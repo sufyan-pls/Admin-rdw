@@ -1,12 +1,12 @@
-import BreadCrumb from 'Components/Common/BreadCrumb';
-import React from 'react';
-import { Container, Row } from 'reactstrap';
-import Widgets from './Widgets';
-import BuilderTable from './BuilderTable';
+import BreadCrumb from "Components/Common/BreadCrumb";
+import React from "react";
+import { Container, Row } from "reactstrap";
+import Widgets from "./Widgets";
+import BuilderTable from "./BuilderTable";
 
 const Builder = () => {
-document.title = "Builder";
-return (
+  document.title = "Builder";
+  return (
     <React.Fragment>
         <div className="page-content">
             <Container fluid>
@@ -24,6 +24,6 @@ return (
             </Container>
         </div>
     </React.Fragment>
-)
-}
+  );
+};
 export default Builder;
