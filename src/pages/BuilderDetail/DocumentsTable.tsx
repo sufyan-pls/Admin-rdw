@@ -1,84 +1,115 @@
-import TableContainer from "Components/Common/TableContainerReactTable";
-import React, { useState } from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  Input,
-  Nav,
-  NavItem,
-  NavLink,
-  Row,
-  TabContent,
-  Button,
-} from "reactstrap";
-import classnames from "classnames";
-import classNames from "classnames";
-import VerificationDocuments from "pages/Documents/VerificationDocuments";
-import ProperyContracts from "pages/Documents/PropertyContracts";
-import ListingDocuments from "pages/Documents/ListingDocuments";
+import React, { useState } from 'react';
+import TableContainer from 'Components/Common/TableContainerReactTable';
+import { Card, CardHeader, Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, CardBody } from 'reactstrap';
+import { documentsData } from 'common/data/builder';
+
+const statusOptions = [
+    { value: 'approve', label: 'Approve' },
+    { value: 'pending', label: 'Pending' },
+    { value: 'reject', label: 'Reject' },
+];
 
 const DocumentsTable = () => {
-  const [activeTab, setActiveTab] = useState("1");
-  const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [activeDocType, setActiveDocType] = useState("verification");
+    const [data, setData] = useState(documentsData);
+    const [dropdownOpen, setDropdownOpen] = useState<{ [key: number]: boolean }>({});
 
-  const columns = [
-    {
-      Header: "Document ID",
-      accessor: "documentId",
-      enableColumnFilter: false,
-    },
-    {},
-  ];
-  return (
-    <React.Fragment>
-      <div className="mb-3">
-        <Row>
-          <Col sm={12}>
-            {" "}
-            <div className="d-flex gap-2 ">
-              <Button
-                color={activeDocType === "verification" ? "light" : "secondary"}
-                className="pt-2"
-                style={{ height: "48px" }}
-                outline={activeDocType !== "verification"}
-                onClick={() => setActiveDocType("verification")}
-              >
-                Verification Documents
-              </Button>
-              <Button
-                color={activeDocType === "property" ? "light" : "secondary"}
-                className="pt-2"
-                style={{ height: "48px" }}
-                outline={activeDocType !== "property"}
-                onClick={() => setActiveDocType("property")}
-              >
-                Property Contracts
-              </Button>
-              <Button
-                color={activeDocType === "listing" ? "light" : "secondary"}
-                className="pt-2"
-                style={{ height: "48px" }}
-                outline={activeDocType !== "listing"}
-                onClick={() => setActiveDocType("listing")}
-              >
-                Listing Documents
-              </Button>
-            </div>
-          </Col>
-        </Row>{" "}
-      </div>
+    const columns = [
+        { header: 'Document ID', accessorKey: 'documentId', enableColumnFilter: false },
+        { header: 'File Name', accessorKey: 'fileName', enableColumnFilter: false },
+        { header: 'Description', accessorKey: 'description', enableColumnFilter: false },
+        { header: 'Type', accessorKey: 'type', enableColumnFilter: false },
+        { header: 'Size', accessorKey: 'size', enableColumnFilter: false },
+        { header: 'Created At', accessorKey: 'createdAt', enableColumnFilter: false },
+        { header: 'Updated At', accessorKey: 'updatedAt', enableColumnFilter: false },
+        {
+            header: 'Status',
+            accessorKey: 'status',
+            enableColumnFilter: false,
+            cell: ({ row, getValue }: { row: any, getValue: any }) => {
+                const value = getValue();
+                const rowIndex = row.index;
 
-      {activeDocType === "verification" && <VerificationDocuments />}
+                const handleStatusChange = (newStatus: string) => {
+                    setData(prev =>
+                        prev.map((doc, idx) =>
+                            idx === rowIndex
+                                ? { ...doc, status: newStatus }
+                                : doc
+                        )
+                    );
+                };
 
-      {activeDocType === "property" && <ProperyContracts />}
+                return (
+                    <Dropdown isOpen={!!dropdownOpen[rowIndex]} toggle={() => setDropdownOpen(prev => ({ ...prev, [rowIndex]: !prev[rowIndex] }))} size="sm">
+                        <DropdownToggle caret color="light" style={{ minWidth: 100 }}>
+                            {statusOptions.find(opt => opt.value === value)?.label || 'Select'}
+                        </DropdownToggle>
+                        <DropdownMenu>
+                            {statusOptions.map(opt => (
+                                <DropdownItem
+                                    key={opt.value}
+                                    active={value === opt.value}
+                                    onClick={() => handleStatusChange(opt.value)}
+                                >
+                                    {opt.label}
+                                </DropdownItem>
+                            ))}
+                        </DropdownMenu>
+                    </Dropdown>
+                );
+            }
+        },
+        {
+            header: 'Action',
+            accessorKey: 'action',
+            enableColumnFilter: false,
+            cell: ({ row }: { row: any }) => {
+                const fileUrl = row.original.downloadUrl;
+                const handleDownload = () => {
+                    const link = document.createElement('a');
+                    link.href = fileUrl;
+                    link.setAttribute('download', '');
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                };
+                return (
+                    <span
+                        onClick={handleDownload}
+                        style={{ color: '#e5e7eb', fontSize: 28, cursor: 'pointer' }}
+                        title="Download"
+                    >
+                        <i className="ri-download-cloud-line"></i>
+                    </span>
+                );
+            },
+        }
+    ];
 
-      {activeDocType === "listing" && <ListingDocuments />}
-    </React.Fragment>
-  );
+    return (
+        <React.Fragment>
+            <Card>
+                <CardHeader>
+                    <div className="text-end">
+                        <Input
+                            type="text"
+                            placeholder="Search"
+                            className="rounded-2  py-2 mb-3"
+                            style={{ maxWidth: 300, display: 'inline-block', border: '1px solid #e5e7eb' }}
+                        />
+                    </div>
+                </CardHeader>
+                <CardBody>
+                    <TableContainer
+                        columns={columns}
+                        data={data}
+                        customPageSize={5}
+                        tableClass="table-centered align-middle table-nowrap mb-0"
+                        theadClass="text-muted table-light" />
+                </CardBody>
+            </Card>
+        </React.Fragment>
+    );
 };
 
 export default DocumentsTable;
