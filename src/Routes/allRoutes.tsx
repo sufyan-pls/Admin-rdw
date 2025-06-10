@@ -247,6 +247,11 @@ import PageBlogOverview from "pages/Pages/Blogs/Overview";
 import Builder from "pages/Builder";
 import BuilderDetail from "pages/BuilderDetail";
 import ListingDetail from "pages/ListingDetail";
+import Refunds from "pages/Revenue/Refund";
+import Revenue from "pages/Revenue";
+import SupportUI from "pages/Support";
+import SettingsUI from "pages/Settings";
+import Documents from "pages/Documents";
 
 
 const authProtectedRoutes = [
