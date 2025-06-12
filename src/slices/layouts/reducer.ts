@@ -32,10 +32,10 @@ export interface LayoutState {
 export const initialState = {
   layoutType: LAYOUT_TYPES.VERTICAL,
   leftSidebarType: LAYOUT_MODE_TYPES.DARKMODE,
-  layoutModeType: LAYOUT_SIDEBAR_TYPES.DARK,
+  layoutModeType: LAYOUT_SIDEBAR_TYPES.LIGHT,
   layoutWidthType: LAYOUT_WIDTH_TYPES.FLUID,
   layoutPositionType: LAYOUT_POSITION_TYPES.FIXED,
-  topbarThemeType: LAYOUT_TOPBAR_THEME_TYPES.DARK,
+  topbarThemeType: LAYOUT_TOPBAR_THEME_TYPES.LIGHT,
   leftsidbarSizeType: LEFT_SIDEBAR_SIZE_TYPES.DEFAULT,
   leftSidebarViewType: LEFT_SIDEBAR_VIEW_TYPES.DEFAULT,
   leftSidebarImageType: LEFT_SIDEBAR_IMAGE_TYPES.NONE,

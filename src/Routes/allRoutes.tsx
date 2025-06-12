@@ -246,13 +246,22 @@ import PageBlogOverview from "pages/Pages/Blogs/Overview";
 // Builder
 import Builder from "pages/Builder";
 import BuilderDetail from "pages/BuilderDetail";
-
 import ListingDetail from "pages/ListingDetail";
+
+// Revenue
 import Refunds from "pages/Revenue/Refund";
 import Revenue from "pages/Revenue";
+
+// Support
 import SupportUI from "pages/Support";
+
+// Settings
 import SettingsUI from "pages/Settings";
+
+// Documents
 import Documents from "pages/Documents";
+
+
 
 
 
@@ -260,10 +269,10 @@ const authProtectedRoutes = [
   // Builder
   { path: "/builder", component: <Builder /> },
   { path: "/builder-detail", component: <BuilderDetail /> },
+  { path: "/listing-detail", component: <ListingDetail />},
 
   //Documents
   { path: "/documents", component: <Documents /> },
-  // { path: "/builder-detail", component: <BuilderDetail /> },
 
   //Settings
   { path: "/settings", component: <SettingsUI /> },

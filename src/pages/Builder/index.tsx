@@ -10,7 +10,14 @@ const Builder = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <BreadCrumb title="Builder" pageTitle="RealWealtdy" />
+          {/* <BreadCrumb title="Builder" pageTitle="RealWealtdy" /> */}
+          <BreadCrumb 
+            title="Builder" 
+            pageTitles={[
+              { label: "RealWealtdy", path: "/" },
+              { label: "Builder" }
+            ]}
+          />
           <Row>
             <Widgets />
           </Row>
