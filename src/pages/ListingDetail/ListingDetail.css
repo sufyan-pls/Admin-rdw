@@ -1,0 +1,46 @@
+.sticky-header-wrapper {
+    position: sticky;
+    top: 94px;
+    z-index: 10; /* Just above content, not over sidebar/header */
+    background: #f1f1f1; /* Or your card/content background */
+    /* Remove: left, width, and high z-index */
+    /* Add border-bottom or shadow if you want a separation */
+  }
+  
+  
+  .listing-detail-main-row {
+      display: flex;
+      gap: 24px; /* Space between columns */
+      margin-top: 24px;
+    }
+    
+    /* Left side: 75% */
+    .listing-detail-left {
+      flex: 0 0 74%;
+      max-width: 74%;
+    }
+    
+    /* Right side: 25% */
+    .listing-detail-right {
+      flex: 0 0 25%;
+      max-width: 25%;
+      /* background-color: #171515; */
+      /* color: #fff; */
+      /* min-height: 100vh; */
+      /* Optional: Add some padding for better look */
+      /* padding: 16px;
+      border-radius: 6px; */
+    }
+    
+    /* Responsive: Stack on mobile */
+    @media (max-width: 991px) {
+      .listing-detail-main-row {
+        flex-direction: column;
+      }
+      .listing-detail-left,
+      .listing-detail-right {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-right: '2px';
+      }
+    }

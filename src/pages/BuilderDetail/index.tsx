@@ -4,6 +4,7 @@ import { Container, Row } from "reactstrap";
 import Widgets from "./Widgets";
 import BasicInformation from "./BasicInformation";
 import NavTabs from "./NavTabs";
+import ListingDetail from "pages/ListingDetail";
 
 const BuilderDetail = () => {
   document.title = "Builder Detail";
@@ -11,7 +12,14 @@ const BuilderDetail = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <BreadCrumb title="Builder Detail" pageTitle="Builder" />
+          {/* <BreadCrumb title="Builder Detail" pageTitle="Builder" /> */}
+          <BreadCrumb 
+            title="Builder Detail" 
+            pageTitles={[
+              { label: "Builder", path: "/builder" },
+              { label: "Builder Detail" }
+            ]}
+          />
           <div>
             <Widgets />
           </div>
