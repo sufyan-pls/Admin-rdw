@@ -13,7 +13,7 @@ const SupportUI = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <BreadCrumb title="Support" pageTitle="RealWealtdy" />
+          <BreadCrumb title="Support" pageTitles={[{ label: "RealWealtdy", path: "/" }, { label: "Support" }]} />
           {/* <Row>
             <Widgets />
           </Row> */}

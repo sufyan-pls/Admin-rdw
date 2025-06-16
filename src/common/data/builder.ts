@@ -86,7 +86,7 @@ const builderDetailWidgets = [
     prefix: "$",
     separator: ",",
   },
-
+];
 
 const builderData = [
     { id: '#737', name: 'Floyd Miles', email: 'kenzi.lawson@example.com', phone: '(684) 555-0102', created: '22 Oct, 2020 12:30 PM', updated: '22 Oct, 2020 12:30 PM', status: 'Active' },

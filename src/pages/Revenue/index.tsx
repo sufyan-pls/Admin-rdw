@@ -12,7 +12,13 @@ const Revenue = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <BreadCrumb title="Revenue" pageTitle="RealWealtdy" />
+          <BreadCrumb 
+            title="Revenue" 
+            pageTitles={[
+              { label: "RealWealtdy", path: "/" },
+              { label: "Revenue" }
+            ]}
+          />
           <Row>
             <WidgetsRevenue />
           </Row>
