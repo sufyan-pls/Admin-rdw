@@ -64,7 +64,7 @@ const BasicInformation = () => {
                                 <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Created At</span>
                                 <span className="text-muted" style={{ fontSize: 15, whiteSpace: 'nowrap' }}>{info.createdAt}</span>
                             </Col>
-                            <Col className="d-flex flex-column">
+                            <Col className="d-flex flex-column mt-2">
                                 <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Status</span>
                                 <div className="d-flex align-items-center">
                                     <Dropdown isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)} direction="down">
@@ -73,10 +73,8 @@ const BasicInformation = () => {
                                             color="light"
                                             className="w-100 text-start px-2 py-1"
                                             style={{
-                                                background: '#23272b',
                                                 fontWeight: 500,
                                                 fontSize: 15,
-                                                color: '#fff',
                                                 border: '1px solid ', // Yeh line add kar dein
                                                 borderRadius: 6
                                             }}

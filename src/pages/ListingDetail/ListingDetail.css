@@ -1,7 +1,7 @@
 .sticky-header-wrapper {
     position: sticky;
     top: 94px;
-    z-index: 1; /* Just above content, not over sidebar/header */
+    z-index: 10; /* Just above content, not over sidebar/header */
     background: #f1f1f1; /* Or your card/content background */
     /* Remove: left, width, and high z-index */
     /* Add border-bottom or shadow if you want a separation */

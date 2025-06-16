@@ -1,11 +1,15 @@
 import BreadCrumb from 'Components/Common/BreadCrumb';
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'reactstrap';
 import Information from './Information';
 import './ListingDetail.css';
 import ReviewListing from './ReviewListing';
+import Action from './Action';
+import InspectionDetails from './InspectionDetails';
+import CompanyInspection from './CompanyInspection';
 
 const ListingDetail = () => {
+    const [action, setAction] = useState('Approve & Assign Inspector');
     return (
         <React.Fragment>
             <div className="page-content">
@@ -26,7 +30,9 @@ const ListingDetail = () => {
                             <ReviewListing />
                         </div>
                         <div className="listing-detail-right">
-                            <p>This is side Div.</p>
+                            <Action action={action} setAction={setAction}/>
+                            {action === 'Approve & Assign Inspector' && <InspectionDetails />}
+                            {action === 'Make Live' && <CompanyInspection />}
                         </div>
                     </div>
                 </Container>
