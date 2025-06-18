@@ -248,6 +248,10 @@ import Builder from "pages/Builder";
 import BuilderDetail from "pages/BuilderDetail";
 import ListingDetail from "pages/ListingDetail";
 
+// Users
+import Users from "pages/Users";
+import UserDetailPage from "pages/Users/UserDetailPage";
+
 // Revenue
 import Refunds from "pages/Revenue/Refund";
 import Revenue from "pages/Revenue";
@@ -270,6 +274,10 @@ const authProtectedRoutes = [
   { path: "/builder", component: <Builder /> },
   { path: "/builder-detail", component: <BuilderDetail /> },
   { path: "/listing-detail", component: <ListingDetail />},
+
+  // Users
+  {path:"/users", component:<Users />},
+  {path:"/users-details", component:<UserDetailPage />},
 
   //Documents
   { path: "/documents", component: <Documents /> },

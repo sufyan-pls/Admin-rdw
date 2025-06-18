@@ -1,13 +1,12 @@
-import React from 'react';
 import {
     Modal, ModalHeader, ModalBody, ModalFooter,
     Row, Col, Form, FormGroup, Label, Input, Button, Badge
 } from 'reactstrap';
 
-const EditBuilderModal = ({ isOpen, toggle, user }: any) => {
+const UserEditModal = ({ isOpen, toggle, user }: any) => {
     return (
         <Modal isOpen={isOpen} toggle={toggle} size="lg" centered backdrop="static" className="edit-user-modal">
-            <ModalHeader toggle={toggle} className="border-bottom-0 pb-0">Edit Builder</ModalHeader>
+            <ModalHeader toggle={toggle} className="border-bottom-0 pb-0">Edit User</ModalHeader>
             <ModalBody className="pt-0 pb-2 px-4">
                 {/* Image Upload Area */}
                 <div className="bg-light d-flex flex-column align-items-center justify-content-center position-relative mb-4" style={{ height: 140, borderRadius: 0, border: 'none' }}>
@@ -97,4 +96,4 @@ const EditBuilderModal = ({ isOpen, toggle, user }: any) => {
     );
 };
 
-export default EditBuilderModal; 
+export default UserEditModal; 

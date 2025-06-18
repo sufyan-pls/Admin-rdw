@@ -151,10 +151,10 @@ const Navdata = () => {
       },
     },
     {
-      id: "user",
-      label: "User",
+      id: "users",
+      label: "Users",
       icon: "mdi mdi-account-group",
-      link: "/widgets",
+      link: "/users",
       click: function (e: any) {
         e.preventDefault();
         setIscurrentState("Widgets");
