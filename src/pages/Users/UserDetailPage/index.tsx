@@ -15,10 +15,10 @@ const BuilderDetail = () => {
       <div className="page-content">
         <Container fluid>
           <BreadCrumb 
-            title="Users Detais" 
+            title="User Details" 
             pageTitles={[
               { label: "Users", path: "/users" },
-              { label: "Users Detail" }
+              { label: "User Details" }
             ]}
           />
           <div>

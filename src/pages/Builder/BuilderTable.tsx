@@ -132,7 +132,7 @@ const BuilderTable = () => {
                                                             <i className="ri-eye-line me-2"></i> View Details
                                                         </DropdownItem>
                                                         <DropdownItem onClick={() => handleEdit(row)}>
-                                                            <i className="ri-edit-line me-2"></i> Edit Builder
+                                                            <i className="ri-pencil-line me-2"></i> Edit Builder
                                                         </DropdownItem>
                                                     </DropdownMenu>
                                                 </UncontrolledDropdown>

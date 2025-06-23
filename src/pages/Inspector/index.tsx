@@ -1,31 +1,30 @@
 import BreadCrumb from "Components/Common/BreadCrumb";
 import React from "react";
 import { Container, Row } from "reactstrap";
-import BuilderTable from "./BuilderTable";
-import { builderWidgets } from "common/data/builder";
+import ManageInspectorTable from "./Components/ManageInspectorTable";
+import { inspectorWidgetsData } from "common/data/Inspector";
 import Widgets from "Components/Common/Widgets";
 
-const Builder = () => {
-  document.title = "Builder";
+const Inspector = () => {
+  document.title = "Inspector";
   return (
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          {/* <BreadCrumb title="Builder" pageTitle="RealWealtdy" /> */}
           <BreadCrumb 
-            title="Builder" 
+            title="Inspector" 
             pageTitles={[
               { label: "RealWealtdy", path: "/" },
-              { label: "Builder" }
+              { label: "Inspector" }
             ]}
           />
           <Row>
-            <Widgets data={builderWidgets} />
+            <Widgets data={inspectorWidgetsData} />
           </Row>
-          <BuilderTable />
+          <ManageInspectorTable />
         </Container>
       </div>
     </React.Fragment>
   );
 };
-export default Builder;
+export default Inspector;

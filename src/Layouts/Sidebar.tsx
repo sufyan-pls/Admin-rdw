@@ -41,21 +41,63 @@ const Sidebar = ({ layoutType }:any) => {
       <div className="app-menu navbar-menu">
         <div className="navbar-brand-box">
           <Link to="/" className="logo logo-dark">
-            <span className="logo-sm">
-              <img src={realwealtdyFooterLogo} alt="" height="22" />
-            </span>
-            <span className="logo-lg">
-              <img src={realwealtdy} alt="" height="17" />
-            </span>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "60px",
+              }}
+            >
+              <img
+                src={realwealtdyFooterLogo}
+                alt="Logo"
+                style={{
+                  height: "32px",
+                  marginRight: "10px",
+                  display: "block"
+                }}
+              />
+              <span
+                style={{
+                  color: "#fff",
+                  fontSize: "1.3rem",
+                  fontWeight: "bold"
+                }}
+              >
+                Realwealtdy
+              </span>
+            </div>
           </Link>
 
           <Link to="/" className="logo logo-light">
-            <span className="logo-sm">
-              <img src={realwealtdyFooterLogo} alt="" height="22" />
-            </span>
-            <span className="logo-lg">
-              <img src={realwealtdy} alt="" height="17" />
-            </span>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "60px",
+              }}
+            >
+              <img
+                src={realwealtdyFooterLogo}
+                alt="Logo"
+                style={{
+                  height: "32px",
+                  marginRight: "10px",
+                  display: "block"
+                }}
+              />
+              <span
+                style={{
+                  color: "#fff",
+                  fontSize: "1.3rem",
+                  fontWeight: "bold"
+                }}
+              >
+                Realwealtdy
+              </span>
+            </div>
           </Link>
           <button
             onClick={addEventListenerOnSmHoverMenu}
