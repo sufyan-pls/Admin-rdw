@@ -1,15 +1,14 @@
 import TableContainer from 'Components/Common/TableContainerReactTable';
 import React from 'react';
 import {DropdownItem, DropdownMenu, DropdownToggle, Spinner, UncontrolledDropdown } from 'reactstrap';
-import UserEditModal from '../Modal/UserEditModal';
 import { useNavigate } from 'react-router-dom';
-
+import InspectorEditModal from '../Modal/InspectorEditModal';
 interface ApprovedListingProps {
     data: any;
     loading: boolean;
 }
 
-const PendingListing = ({ data, loading }: ApprovedListingProps) => {
+const ApprovedListing = ({ data, loading }: ApprovedListingProps) => {
     const navigate = useNavigate();
     const [modalOpen, setModalOpen] = React.useState(false);
     const [selectedPerson, setSelectedPerson] = React.useState(null);
@@ -51,10 +50,10 @@ const PendingListing = ({ data, loading }: ApprovedListingProps) => {
             enableColumnFilter: false,
             cell: (cell: any) => {
                 switch (cell.getValue()) {
-                    case "Pending":
-                        return (<span className="badge rounded-pill bg-warning text-uppercase "> {cell.getValue()}</span>);
+                    case "Approved":
+                        return (<span className="badge rounded-pill bg-success text-uppercase "> {cell.getValue()}</span>);
                     default:
-                        return (<span className="badge rounded-pill  bg-warning text-uppercase"> {cell.getValue()}</span>);
+                        return (<span className="badge rounded-pill  bg-danger text-uppercase"> {cell.getValue()}</span>);
                 }
             },
         },
@@ -70,7 +69,7 @@ const PendingListing = ({ data, loading }: ApprovedListingProps) => {
                     <DropdownMenu>
                         <DropdownItem
                             onClick={() => {
-                                navigate(`/user-details/${row.original.id}`);
+                                navigate(`/inspector-details/${row.original.id}`);
                             }}
                             className="d-flex align-items-center"
                         >
@@ -83,7 +82,7 @@ const PendingListing = ({ data, loading }: ApprovedListingProps) => {
                             }}
                             className="d-flex align-items-center"
                         >
-                            <i className="ri-pencil-line me-2"></i> Edit User
+                            <i className="ri-pencil-line me-2"></i> Edit Inspector
                         </DropdownItem>
                     </DropdownMenu>
                 </UncontrolledDropdown>
@@ -103,7 +102,7 @@ const PendingListing = ({ data, loading }: ApprovedListingProps) => {
                     theadClass="text-muted table-light"
                 />
             }
-            <UserEditModal
+            <InspectorEditModal
                 isOpen={modalOpen}
                 toggle={() => setModalOpen(false)}
                 person={selectedPerson}
@@ -112,4 +111,4 @@ const PendingListing = ({ data, loading }: ApprovedListingProps) => {
     );
 };
 
-export default PendingListing;
+export default ApprovedListing;

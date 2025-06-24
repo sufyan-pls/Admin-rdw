@@ -84,8 +84,8 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }:any) => {
                                     <span className="logo-sm">
                                         <img src={realwealtdyFooterLogo} alt="" height="22" />
                                     </span>
-                                    <span className="logo-lg">
-                                        <img src={realwealtdy} alt="" height="17" />
+                                    <span className="logo-lg text-light">
+                                        <img src={realwealtdyFooterLogo} alt="" height="17" />Realwealtdy
                                     </span>
                                 </Link>
 
@@ -94,7 +94,7 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }:any) => {
                                         <img src={realwealtdyFooterLogo} alt="" height="22" />
                                     </span>
                                     <span className="logo-lg">
-                                        <img src={realwealtdy} alt="" height="17" />
+                                    <img src={realwealtdyFooterLogo} alt="" height="17" />Realwealtdy
                                     </span>
                                 </Link>
                             </div>

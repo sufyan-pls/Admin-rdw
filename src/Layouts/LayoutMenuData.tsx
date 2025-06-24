@@ -174,7 +174,7 @@ const Navdata = () => {
       id: "inspector",
       label: "Inspector",
       icon: "ri-survey-line",
-      link: "/widgets",
+      link: "/inspector",
       click: function (e: any) {
         e.preventDefault();
         setIscurrentState("Widgets");

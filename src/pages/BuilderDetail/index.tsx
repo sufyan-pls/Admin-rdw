@@ -1,10 +1,10 @@
 import BreadCrumb from "Components/Common/BreadCrumb";
 import React from "react";
 import { Container, Row } from "reactstrap";
-import Widgets from "./Widgets";
 import BasicInformation from "./BasicInformation";
 import NavTabs from "./NavTabs";
-import ListingDetail from "pages/ListingDetail";
+import { builderDetailWidgets } from "common/data/builder";
+import Widgets from "Components/Common/Widgets";
 
 const BuilderDetail = () => {
   document.title = "Builder Detail";
@@ -20,9 +20,9 @@ const BuilderDetail = () => {
               { label: "Builder Detail" }
             ]}
           />
-          <div>
-            <Widgets />
-          </div>
+          <Row>
+            <Widgets data={builderDetailWidgets} />
+          </Row>
           <div>
             <BasicInformation />
           </div>

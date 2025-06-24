@@ -70,7 +70,7 @@ const ApprovedListing = ({ data, loading }: ApprovedListingProps) => {
                     <DropdownMenu>
                         <DropdownItem
                             onClick={() => {
-                                navigate("/users-details");
+                                navigate(`/user-details/${row.original.id}`);
                             }}
                             className="d-flex align-items-center"
                         >

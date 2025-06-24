@@ -252,6 +252,9 @@ import ListingDetail from "pages/ListingDetail";
 import Users from "pages/Users";
 import UserDetailPage from "pages/Users/UserDetailPage";
 
+// Inspector
+import Inspector from "pages/Inspector";
+
 // Revenue
 import Refunds from "pages/Revenue/Refund";
 import Revenue from "pages/Revenue";
@@ -264,6 +267,8 @@ import SettingsUI from "pages/Settings";
 
 // Documents
 import Documents from "pages/Documents";
+import InspectorDetailPage from "pages/Inspector/InspectorDetailPage";
+
 
 
 
@@ -277,7 +282,11 @@ const authProtectedRoutes = [
 
   // Users
   {path:"/users", component:<Users />},
-  {path:"/users-details", component:<UserDetailPage />},
+  {path:"/user-details", component:<UserDetailPage />},
+
+  // Inspector
+  {path:"/inspector", component:<Inspector />},
+  {path:"/inspector-details", component:<InspectorDetailPage />},
 
   //Documents
   { path: "/documents", component: <Documents /> },

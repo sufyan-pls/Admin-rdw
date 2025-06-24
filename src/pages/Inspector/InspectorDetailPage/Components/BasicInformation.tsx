@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardBody, Row, Col, Badge, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
-import EditBuilderModal from './EditBuilderModal';
+// import EditBuilderModal from './EditBuilderModal';
 
 const BasicInformation = () => {
     const [status, setStatus] = useState('Active');
@@ -13,9 +13,9 @@ const BasicInformation = () => {
         avatar: '',
         realtor: 'realtor@email.com',
         approved: true,
-        builderId: '#876',
+        builderId: '#87654321',
         phone: '(684) 555-0102',
-        taxId: '723748191027',
+        address: '123 Main St, Anytown, USA',
         createdAt: 'Jan 04, 2024 12:30 PM',
     };
 
@@ -45,7 +45,7 @@ const BasicInformation = () => {
                                 <span className="text-muted" style={{ fontSize: 15 }}>{info.realtor}</span>
                             </div>
                             <div >
-                                <span className="fw-semibold" style={{ fontSize: 16 }}>Builder ID</span>
+                                <span className="fw-semibold" style={{ fontSize: 16 }}>Inspector ID</span>
                                 <p className="text-muted" style={{ fontSize: 15 }}>{info.builderId}</p>
                             </div>
                         </div>
@@ -57,8 +57,8 @@ const BasicInformation = () => {
                                 <span className="text-muted" style={{ fontSize: 15, whiteSpace: 'nowrap' }}>{info.phone}</span>
                             </Col>
                             <Col className="d-flex flex-column">
-                                <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Tax Identification Number</span>
-                                <span className="text-muted" style={{ fontSize: 15, whiteSpace: 'nowrap' }}>{info.taxId}</span>
+                                <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Address</span>
+                                <span className="text-muted" style={{ fontSize: 15, whiteSpace: 'nowrap' }}>{info.address}</span>
                             </Col>
                             <Col className="d-flex flex-column">
                                 <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Created At</span>
@@ -68,13 +68,14 @@ const BasicInformation = () => {
                                 <span className="fw-semibold" style={{ fontSize: 16, whiteSpace: 'nowrap' }}>Status</span>
                                 <div className="d-flex align-items-center">
                                     <Dropdown isOpen={dropdownOpen} toggle={() => setDropdownOpen(!dropdownOpen)} direction="down">
-                                        <DropdownToggle
+                                    <DropdownToggle
                                             caret
                                             color="light"
                                             className="w-100 text-start px-2 py-1"
                                             style={{
                                                 fontWeight: 500,
                                                 fontSize: 15,
+                                                border: '1px ', // Yeh line add kar dein
                                                 borderRadius: 6
                                             }}
                                         >
@@ -91,7 +92,7 @@ const BasicInformation = () => {
                     </div>
                 </div>
             </CardBody>
-            <EditBuilderModal isOpen={editModalOpen} toggle={() => setEditModalOpen(false)} user={selectedUser} />
+            {/* <EditBuilderModal isOpen={editModalOpen} toggle={() => setEditModalOpen(false)} user={selectedUser} /> */}
         </Card>
     );
 };
