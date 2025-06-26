@@ -268,6 +268,8 @@ import SettingsUI from "pages/Settings";
 // Documents
 import Documents from "pages/Documents";
 import InspectorDetailPage from "pages/Inspector/InspectorDetailPage";
+import Properties from "pages/Properties";
+import PropertiesListingDetailPage from "pages/Properties/PropertiesListingDetailPage";
 
 
 
@@ -287,6 +289,10 @@ const authProtectedRoutes = [
   // Inspector
   {path:"/inspector", component:<Inspector />},
   {path:"/inspector-details", component:<InspectorDetailPage />},
+
+  // Properties
+  {path:"/properties", component:<Properties />},
+  {path:"/properties-listing-detail", component:<PropertiesListingDetailPage />},
 
   //Documents
   { path: "/documents", component: <Documents /> },
