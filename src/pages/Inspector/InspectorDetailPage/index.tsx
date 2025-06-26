@@ -1,7 +1,6 @@
 import BreadCrumb from "Components/Common/BreadCrumb";
 import React from "react";
 import { Container, Row } from "reactstrap";
-// import Widgets from "./Components/Widgets";
 import { inspectorDetailWidgetsData } from "common/data/Inspector";
 import Widgets from "Components/Common/Widgets";
 import BasicInformation from "./Components/BasicInformation";

@@ -181,10 +181,10 @@ const Navdata = () => {
       },
     },
     {
-      id: "property",
-      label: "Property",
+      id: "properties",
+      label: "Properties",
       icon: "ri-home-4-line",
-      link: "/widgets",
+      link: "/properties",
       click: function (e: any) {
         e.preventDefault();
         setIscurrentState("Widgets");
