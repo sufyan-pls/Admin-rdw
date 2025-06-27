@@ -6,6 +6,8 @@ import Information from './Components/Information';
 import ReviewListing from './Components/ReviewListing';
 import CompanyInspection from './Components/CompanyInspection';
 import SecondaryInspection from './Components/SecondaryInspection';
+import Action from './Components/Action';
+import DealInProgress from './Components/DealInProgress';
 // import ReviewListing from './ReviewListing';
 // import Action from './Action';
 // import InspectionDetails from './InspectionDetails';
@@ -57,10 +59,10 @@ const PropertiesListingDetailPage = () => {
                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', paddingBottom: '20px' }}>
                         <div className="listing-detail-left">
                             {activeTab === 'listing-detail' && <ReviewListing />}
-                            {/* {activeTab === 'deal-in-progress' && <DealInProgress />} */}
+                            {activeTab === 'deal-in-progress' && <DealInProgress />}
                         </div>
                         <div className="listing-detail-right">
-                            {/* <Action action={action} setAction={setAction}/> */}
+                            <Action />
                             {/* {action === 'Approve & Assign Inspector' && <InspectionDetails />} */}
                             {activeTab === 'listing-detail' && <CompanyInspection />}
                             {activeTab === 'listing-detail' && <SecondaryInspection />}
