@@ -12,6 +12,7 @@ import Media from './Media';
 import Description from './Description';
 import Demographics from './Demographics';
 import ContactInformation from './ContactInformation';
+import OffersListing from './OffersListing';
 
 const ReviewListing = () => {
     return (
@@ -68,6 +69,10 @@ const ReviewListing = () => {
                     <h6>Contact Information</h6>
                 </div>
                 <ContactInformation />
+                <div className="shadow p-3 mb-3 bg-light rounded">
+                    <h6>Offers</h6>
+                </div>
+                <OffersListing />
             </CardBody>
         </Card>
     );

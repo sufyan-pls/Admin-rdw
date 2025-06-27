@@ -17,7 +17,7 @@ const ContactInformation = () => {
   const [phone, setPhone] = React.useState(contactData.phone);
 
   return (
-    <div>
+    <div className='mb-3'>
       <Row className="mb-3">
         <Col md={6} className="mb-3 mb-md-0">
           <label className="form-label">First Name</label>
