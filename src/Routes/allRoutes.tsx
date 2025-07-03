@@ -270,6 +270,7 @@ import Documents from "pages/Documents";
 import InspectorDetailPage from "pages/Inspector/InspectorDetailPage";
 import Properties from "pages/Properties";
 import PropertiesListingDetailPage from "pages/Properties/PropertiesListingDetailPage";
+import Dashboard from "pages/Dashboard";
 
 
 
@@ -277,6 +278,9 @@ import PropertiesListingDetailPage from "pages/Properties/PropertiesListingDetai
 
 
 const authProtectedRoutes = [
+
+  // Dashboard
+  { path: "/dashboard", component: <Dashboard /> },
   // Builder
   { path: "/builder", component: <Builder /> },
   { path: "/builder-detail", component: <BuilderDetail /> },
@@ -311,7 +315,7 @@ const authProtectedRoutes = [
 
   { path: "/dashboard-analytics", component: <DashboardAnalytics /> },
   { path: "/dashboard-crm", component: <DashboardCrm /> },
-  { path: "/dashboard", component: <DashboardEcommerce /> },
+  // { path: "/dashboard", component: <DashboardEcommerce /> },
   { path: "/index", component: <DashboardEcommerce /> },
   { path: "/dashboard-crypto", component: <DashboardCrypto /> },
   { path: "/dashboard-projects", component: <DashboardProject /> },
