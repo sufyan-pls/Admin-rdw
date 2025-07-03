@@ -22,7 +22,6 @@ const PropertyListingTable = () => {
         }, 7000);
     }, []);
 
-    console.log('Active Tab=>', activeTab);
     return (
        <Card>
         <CardHeader>
