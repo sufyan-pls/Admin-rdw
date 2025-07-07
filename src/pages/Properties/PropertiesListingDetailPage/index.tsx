@@ -25,8 +25,7 @@ const PropertiesListingDetailPage = () => {
                         <BreadCrumb
                             title="Listing Detail"
                             pageTitles={[
-                                { label: "Builder", path: "/builder" },
-                                { label: "Builder Detail", path: "/builder-detail" },
+                                { label: "Properties", path: "/properties" },
                                 { label: "Listing Detail" }
                             ]}
                         />

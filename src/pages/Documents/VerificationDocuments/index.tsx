@@ -188,8 +188,9 @@ const VerificationDocuments = () => {
   return (
     <React.Fragment>
       <Card>
-        <CardHeader>
-          <div>
+        <CardBody>
+
+        <div>
             <Row className="justify-content-between align-items-center">
               <Col md={6} className="mt-3">
                 <Nav
@@ -237,7 +238,7 @@ const VerificationDocuments = () => {
                   style={{
                     maxWidth: 300,
                     display: "inline-block",
-                    background: "#1a1d21",
+                    // background: "#1a1d21",
                     border: "1px solid #e5e7eb",
                   }}
                   className="rounded-2 px-4 py-2"
@@ -245,8 +246,7 @@ const VerificationDocuments = () => {
               </Col>
             </Row>
           </div>
-        </CardHeader>
-        <CardBody>
+
           <div className="text-center">
             {/* <h4>Listing Verification Documents </h4>
             <p>Listing documents will be displayed here.</p> */}{" "}
@@ -270,7 +270,7 @@ const VerificationDocuments = () => {
                       style={{ minWidth: 900 }}
                     >
                       {" "}
-                      <thead>
+                      <thead className="bg-grey">
                         <tr>
                           <th>
                             ID{" "}

@@ -174,114 +174,83 @@ export default function RevenuePage() {
     setEditModalOpen(true);
   };
   return (
-    <div>
-      <div className="max-w-4xl">
-        {/* General Header */}
-        <div
-        //   style={{
-        //     backgroundColor: "white",
-        //     borderRadius: "0.5rem",
-        //     boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
-        //     marginBottom: "1.5rem",
-        //   }}
-        >
-          <div
-            style={{
-              borderBottom: "1px solid #e5e7eb",
-              padding: "1.25rem 1.5rem",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "1.125rem",
-                fontWeight: "500",
-                color: "#ffffff",
-                margin: 0,
-                padding: 0,
-              }}
-            >
-              Transactions
-            </h2>
-          </div>
+  <React.Fragment>
+    <Card>
+      <CardHeader>
+        <div>
+          <Row className="justify-content-between align-items-center">
+            <Col md={6} className="mt-3">
+              <Nav
+                tabs
+                className="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3"
+              >
+                <NavItem>
+                  <NavLink
+                    className={classNames({ active: activeTab === "1" })}
+                    onClick={() => setActiveTab("1")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Sold
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className={classNames({ active: activeTab === "2" })}
+                    onClick={() => setActiveTab("2")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Rented
+                  </NavLink>
+                </NavItem>
+              </Nav>
+            </Col>
+            <Col md={6} className="text-end">
+              <Input
+                type="search"
+                placeholder="Search"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setCurrentPage(1);
+                }}
+                style={{
+                  maxWidth: 300,
+                  display: "inline-block",
+                  background: "#1a1d21",
+                  border: "1px solid #e5e7eb",
+                }}
+                className="rounded-2 px-4 py-2"
+              />
+            </Col>
+          </Row>
         </div>
-        <React.Fragment>
-          <Card>
-            <CardHeader>
-              <div>
-                <Row className="justify-content-between align-items-center">
-                  <Col md={6} className="mt-3">
-                    <Nav
-                      tabs
-                      className="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3"
-                    >
-                      <NavItem>
-                        <NavLink
-                          className={classNames({ active: activeTab === "1" })}
-                          onClick={() => setActiveTab("1")}
-                          style={{ cursor: "pointer" }}
-                        >
-                          Sold
-                        </NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink
-                          className={classNames({ active: activeTab === "2" })}
-                          onClick={() => setActiveTab("2")}
-                          style={{ cursor: "pointer" }}
-                        >
-                          Rented
-                        </NavLink>
-                      </NavItem>
-                    </Nav>
-                  </Col>
-                  <Col md={6} className="text-end">
-                    <Input
-                      type="search"
-                      placeholder="Search"
-                      value={search}
-                      onChange={(e) => {
-                        setSearch(e.target.value);
-                        setCurrentPage(1);
-                      }}
-                      style={{
-                        maxWidth: 300,
-                        display: "inline-block",
-                        background: "#1a1d21",
-                        border: "1px solid #e5e7eb",
-                      }}
-                      className="rounded-2 px-4 py-2"
-                    />
-                  </Col>
-                </Row>
-              </div>
-            </CardHeader>
-            <CardBody>
-              <div className="text-center">
-                <CardBody className="pt-0">
-                  {" "}
-                  <TabContent activeTab={activeTab} className="pt-3">
-                    <TabPane
-                      tabId="1"
-                      className={activeTab === "1" ? "active show" : ""}
-                    >
-                      <SoldPage />
-                    </TabPane>
+      </CardHeader>
+      <CardBody>
+        <div className="text-center">
+          <CardBody className="pt-0">
+            {" "}
+            <TabContent activeTab={activeTab} className="pt-3">
+              <TabPane
+                tabId="1"
+                className={activeTab === "1" ? "active show" : ""}
+              >
+                <SoldPage />
+              </TabPane>
 
-                    {/* TAB 2 For RENT */}
-                    <TabPane
-                      tabId="2"
-                      className={activeTab === "2" ? "active show" : ""}
-                    >
-                      <RentedPage />
-                    </TabPane>
-                  </TabContent>
-                </CardBody>
-              </div>
-            </CardBody>{" "}
-            {/* Modal is now handled in the child components and should not be duplicated here */}
-          </Card>
-        </React.Fragment>
-      </div>
-    </div>
+              {/* TAB 2 For RENT */}
+              <TabPane
+                tabId="2"
+                className={activeTab === "2" ? "active show" : ""}
+              >
+                <RentedPage />
+              </TabPane>
+            </TabContent>
+          </CardBody>
+        </div>
+      </CardBody>{" "}
+      {/* Modal is now handled in the child components and should not be duplicated here */}
+    </Card>
+  </React.Fragment>
+
   );
 }

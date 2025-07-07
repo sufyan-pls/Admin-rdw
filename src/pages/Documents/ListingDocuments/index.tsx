@@ -187,8 +187,8 @@ const ListingDocuments = () => {
   return (
     <React.Fragment>
       <Card>
-        <CardHeader>
-          <div>
+        <CardBody className="pt-0">
+        <div>
             <Row className="justify-content-between align-items-center">
               <Col md={6} className="mt-3">
                 <Nav
@@ -236,7 +236,6 @@ const ListingDocuments = () => {
                   style={{
                     maxWidth: 300,
                     display: "inline-block",
-                    background: "#1a1d21",
                     border: "1px solid #e5e7eb",
                   }}
                   className="rounded-2 px-4 py-2"
@@ -244,8 +243,7 @@ const ListingDocuments = () => {
               </Col>
             </Row>
           </div>
-        </CardHeader>
-        <CardBody className="pt-0">
+
           <TabContent activeTab={activeTab} className="pt-3">
             <TabPane tabId="1">
               <div className="table-responsive">
