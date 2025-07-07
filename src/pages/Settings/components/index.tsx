@@ -240,8 +240,8 @@ const SettingsPage: React.FC = () => {
                       className="form-control-light flex-grow-1"
                     />
                     <Button
-                      color="primary"
-                      size="sm"
+                      color="success"
+                      // size="sm"
                       style={{ width: "120px" }}
                     >
                       Update
@@ -252,10 +252,10 @@ const SettingsPage: React.FC = () => {
             </Row>
           </Form>
           <div className="d-flex justify-content-end gap-2 mt-4">
-            <Button color="light" onClick={handleCancel}>
+            <Button color="danger" onClick={handleCancel}>
               Cancel
             </Button>
-            <Button color="primary" onClick={handleSave}>
+            <Button color="success" onClick={handleSave}>
               Save
             </Button>
           </div>
