@@ -41,14 +41,10 @@ const Sidebar = ({ layoutType }:any) => {
       <div className="app-menu navbar-menu">
         <div className="navbar-brand-box">
           <Link to="/" className="logo logo-dark">
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "60px",
-              }}
-            >
+            <span className="logo-sm">
+              <img src={realwealtdyFooterLogo} alt="" height="32" />
+            </span>
+            <span className="logo-lg">
               <img
                 src={realwealtdyFooterLogo}
                 alt="Logo"
@@ -67,19 +63,15 @@ const Sidebar = ({ layoutType }:any) => {
               >
                 Realwealtdy
               </span>
-            </div>
+            </span>
           </Link>
 
           <Link to="/" className="logo logo-light">
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: "60px",
-              }}
-            >
-              <img
+            <span className="logo-sm">
+              <img src={realwealtdyFooterLogo} alt="" height="32" />
+            </span>
+            <span className="logo-lg">
+            <img
                 src={realwealtdyFooterLogo}
                 alt="Logo"
                 style={{
@@ -97,7 +89,7 @@ const Sidebar = ({ layoutType }:any) => {
               >
                 Realwealtdy
               </span>
-            </div>
+            </span>
           </Link>
           <button
             onClick={addEventListenerOnSmHoverMenu}
