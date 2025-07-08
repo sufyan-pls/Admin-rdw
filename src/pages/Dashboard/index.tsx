@@ -72,6 +72,7 @@ const totalUsersData = {
   
 
 const Dashboard = () => {
+    document.title = "Dashboard";
     const [activeTab, setActiveTab] = useState('property-listings');
     const [loading, setLoading] = useState(false);
 
