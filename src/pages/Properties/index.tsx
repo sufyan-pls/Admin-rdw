@@ -29,6 +29,7 @@ const propertyDealsData = {
 };
 
 const Properties = () => {
+    document.title = "Properties";
     return (
         <React.Fragment>
             <div className="page-content">
