@@ -289,6 +289,15 @@
     display: none;
 }
 
+.logo-lg {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    height: 60px;
+}
+
 :is([data-layout="vertical"], [data-layout="semibox"]) {
     .app-menu {
         .row {
@@ -532,11 +541,14 @@
 
         .logo {
             span.logo-lg {
-                display: none;
+                display: none !important;
             }
 
             span.logo-sm {
-                display: inline-block;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                height: 60px;
             }
         }
 
