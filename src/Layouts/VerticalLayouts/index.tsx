@@ -102,13 +102,44 @@ const VerticalLayout = (props:any) => {
     }, [props.router.location.pathname, props.layoutType]);
 
     useEffect(() => {
-        const builderPaths = ["/builder", "/builder-detail/", "/listing-detail"];
+        const builderPaths = ["/builder", "/builder-detail/", "/listing-detail/"];
         const builderLink = document.getElementById("sidebar-builder-link");
         if (builderLink) {
             if (builderPaths.includes(location.pathname)) {
                 builderLink.classList.add("active");
             } else {
                 builderLink.classList.remove("active");
+            }
+        }
+
+        // Users sidebar highlight logic
+        const userPaths = ["/users", "/user-details/"];
+        const usersLink = document.getElementById("sidebar-users-link");
+        if (usersLink) {
+            if (userPaths.includes(location.pathname)) {
+                usersLink.classList.add("active");
+            } else {
+                usersLink.classList.remove("active");
+            }
+        }
+        // Inspector sidebar highlight logic
+        const inspectorPaths = ["/inspector", "/inspector-details/"];
+        const inspectorLink = document.getElementById("sidebar-inspector-link");
+        if (inspectorLink) {
+            if (inspectorPaths.includes(location.pathname)) {
+                inspectorLink.classList.add("active");
+            } else {
+                inspectorLink.classList.remove("active");
+            }
+        } 
+        // Properties sidebar highlight logic
+        const propertiesPaths = ["/properties", "/properties-listing-detail"];
+        const propertiesLink = document.getElementById("sidebar-properties-link");
+        if (propertiesLink) {
+            if (propertiesPaths.includes(location.pathname)) {
+                propertiesLink.classList.add("active");
+            } else {
+                propertiesLink.classList.remove("active");
             }
         }
     }, [location.pathname]);
@@ -166,6 +197,12 @@ const VerticalLayout = (props:any) => {
             {(navData || []).map((item:any, key:number) => {
                 // Identify the Builder link
                 const isBuilder = item.link && item.link.includes("/builder");
+                // Identify the Users link
+                const isUsers = item.link && item.link === "/users";
+                // Identify the Inspector link
+                const isInspector = item.link && item.link === "/inspector";
+                // Identify the Properties link
+                const isProperties =item.link && item.link === "/properties"
                 return (
                     <React.Fragment key={key}>
                         {/* Main Header */}
@@ -175,7 +212,7 @@ const VerticalLayout = (props:any) => {
                                 (item.subItems ? (
                                     <li className="nav-item">
                                         <Link
-                                            id={isBuilder ? "sidebar-builder-link" : undefined}
+                                            id={isBuilder ? "sidebar-builder-link" : isUsers ? "sidebar-users-link" : isInspector ? "sidebar-inspector-link" :isProperties ? "sidebar-properties-link" : undefined}
                                             onClick={item.click}
                                             className="nav-link menu-link"
                                             to={item.link ? item.link : "/#"}
@@ -262,7 +299,7 @@ const VerticalLayout = (props:any) => {
                                 ) : (
                                     <li className="nav-item">
                                         <Link
-                                            id={isBuilder ? "sidebar-builder-link" : undefined}
+                                            id={isBuilder ? "sidebar-builder-link" : isUsers ? "sidebar-users-link" : isInspector ? "sidebar-inspector-link" : isProperties ? "sidebar-properties-link" : undefined}
                                             className="nav-link menu-link"
                                             to={item.link ? item.link : "/#"}>
                                             <i className={item.icon}></i> <span>{props.t(item.label)}</span>

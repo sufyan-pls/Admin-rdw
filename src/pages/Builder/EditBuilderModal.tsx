@@ -7,7 +7,7 @@ import {
 const EditBuilderModal = ({ isOpen, toggle, user }: any) => {
     return (
         <Modal isOpen={isOpen} toggle={toggle} size="lg" centered backdrop="static" className="edit-user-modal">
-            <ModalHeader toggle={toggle} className="border-bottom-0 pb-0">Edit User</ModalHeader>
+            <ModalHeader toggle={toggle} className="border-bottom-0 pb-0">Edit Builder</ModalHeader>
             <ModalBody className="pt-0 pb-2 px-4">
                 {/* Image Upload Area */}
                 <div className="bg-light d-flex flex-column align-items-center justify-content-center position-relative mb-4" style={{ height: 140, borderRadius: 0, border: 'none' }}>
@@ -58,7 +58,7 @@ const EditBuilderModal = ({ isOpen, toggle, user }: any) => {
                 </Form>
 
                 {/* User Status */}
-                <div className="fw-semibold mt-4 mb-2" style={{ fontSize: 17 }}>User Status</div>
+                <div className="fw-semibold mt-4 mb-2" style={{ fontSize: 17 }}>Builder Status</div>
                 <Row className="align-items-center mb-3">
                     <Col md={6} className="mb-2 mb-md-0">
                         <FormGroup className="mb-0">

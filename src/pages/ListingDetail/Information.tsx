@@ -26,7 +26,7 @@ const getStatusBadgeClass = (status: string) => {
 
 const Information = () => {    
     return (
-        <Card>
+        <Card className="rounded-0">
             <CardHeader className="my-2">
                 <h6>Information</h6>
             </CardHeader>

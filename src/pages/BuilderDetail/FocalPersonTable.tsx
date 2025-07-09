@@ -3,6 +3,7 @@ import TableContainer from 'Components/Common/TableContainerReactTable';
 import React from 'react';
 import { Card, CardBody, CardHeader, DropdownItem, DropdownMenu, DropdownToggle, Input, UncontrolledDropdown } from 'reactstrap';
 import FocalPersonDetailsModal from './FocalPersonDetailsModal';
+// import FocalPersonDetailsModal from './FocalPersonDetailsModal';
 
 const FocalPersonTable = () => {
     const [modalOpen, setModalOpen] = React.useState(false);

@@ -1,11 +1,16 @@
 import TableContainer from 'Components/Common/TableContainerReactTable';
 import React from 'react';
-import { Spinner } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
+import { DropdownItem, DropdownMenu, DropdownToggle, Spinner, UncontrolledDropdown } from 'reactstrap';
 
 interface RentedListingTableProps {
     data: any[];
     loading: boolean;
 }
+
+const RentedListingTable: React.FC<RentedListingTableProps> = ({ data, loading }) => {
+    
+const navigate= useNavigate();
 
 const columns = [
     {
@@ -55,15 +60,23 @@ const columns = [
         header: 'Action',
         accessorKey: 'action',
         enableColumnFilter: false,
-        cell: () => (
-            <span style={{ cursor: 'pointer' }}>
-                <i className="ri-more-2-fill" style={{ fontSize: 20, color: '#6b7280' }}></i>
-            </span>
+        cell: ({ row }: { row: any }) => (
+            <UncontrolledDropdown direction="start">
+                <DropdownToggle tag="span" style={{ cursor: 'pointer' }}>
+                    <i className="ri-more-2-fill" style={{ fontSize: 20, color: '#6b7280' }}></i>
+                </DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem
+                        onClick={() => navigate(`/listing-detail/${row.original.propertyId}`)}
+                        className="d-flex align-items-center"
+                    >
+                        <i className="ri-eye-line me-2"></i> View
+                    </DropdownItem>
+                </DropdownMenu>
+            </UncontrolledDropdown>
         ),
     },
 ];
-
-const RentedListingTable: React.FC<RentedListingTableProps> = ({ data, loading }) => {
     return (
         <React.Fragment>
             {loading

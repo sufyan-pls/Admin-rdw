@@ -64,7 +64,7 @@ const ForRentListingTable: React.FC<ForRentListingTableProps> = ({ data, loading
                     </DropdownToggle>
                     <DropdownMenu>
                         <DropdownItem
-                            onClick={() => navigate('/listing-detail')}
+                            onClick={() => navigate(`/listing-detail/${row.original.propertyId}`)}
                             className="d-flex align-items-center"
                         >
                             <i className="ri-eye-line me-2"></i> View

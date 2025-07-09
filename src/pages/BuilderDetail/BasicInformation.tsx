@@ -41,7 +41,7 @@ const BasicInformation = () => {
                         </div>
                         <div className="d-flex flex-row mt-3" style={{ gap: 20 }}>
                             <div >
-                                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start' }}><span className="fw-semibold" style={{ fontSize: 16 }}>Realtor </span>{info.approved && <Badge color="success" className="ms-2 px-2 py-1 text-muted" style={{ fontWeight: 500, fontSize: 13, background: '#f3f4f6', border: 'none' }}>Approved</Badge>}</div>
+                                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start' }}><span className="fw-semibold" style={{ fontSize: 16 }}>Realtor </span>{info.approved && <Badge color="success" className="rounded-pill ms-2 px-2 py-1 text-light" style={{ fontWeight: 500, fontSize: 13, background: '#f3f4f6', border: 'none' }}>Approved</Badge>}</div>
                                 <span className="text-muted" style={{ fontSize: 15 }}>{info.realtor}</span>
                             </div>
                             <div >
@@ -75,7 +75,6 @@ const BasicInformation = () => {
                                             style={{
                                                 fontWeight: 500,
                                                 fontSize: 15,
-                                                border: '1px solid ', // Yeh line add kar dein
                                                 borderRadius: 6
                                             }}
                                         >

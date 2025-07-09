@@ -1,14 +1,19 @@
 import BreadCrumb from 'Components/Common/BreadCrumb';
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'reactstrap';
 import Information from './Information';
 import './ListingDetail.css';
+import ReviewListing from './ReviewListing';
+import Action from './Action';
+import InspectionDetails from './InspectionDetails';
+import CompanyInspection from './CompanyInspection';
 
 const ListingDetail = () => {
+    const [action, setAction] = useState('Approve & Assign Inspector');
     return (
         <React.Fragment>
             <div className="page-content">
-                <Container fluid style={{ backgroundColor: 'blue' }}>
+                <Container fluid >
                     <div className="sticky-header-wrapper">
                         <BreadCrumb
                             title="Listing Detail"
@@ -20,18 +25,14 @@ const ListingDetail = () => {
                         />
                         <Information />
                     </div>
-                    <div style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', paddingBottom: '20px'}}>
                         <div className="listing-detail-left">
-                            <div className="scrollable-content">
-                                <h3>Scroll Down to Test Fixed Information Card</h3>
-                                <p>This is test content to make the page scrollable. The Information card above should remain fixed at the top as you scroll down.</p>
-                                <ul>
-                                    {Array.from({ length: 100 }).map((_, i) => <li key={i}>Test Data Row {i + 1}</li>)}
-                                </ul>
-                            </div>
+                            <ReviewListing />
                         </div>
                         <div className="listing-detail-right">
-                            <p>This is side Div.</p>
+                            <Action action={action} setAction={setAction}/>
+                            {action === 'Approve & Assign Inspector' && <InspectionDetails />}
+                            {action === 'Make Live' && <CompanyInspection />}
                         </div>
                     </div>
                 </Container>
