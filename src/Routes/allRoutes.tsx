@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 
 // Email box
-import MailInbox from "../pages/EmailInbox";
+// import MailInbox from "../pages/EmailInbox";
 // import BasicAction from "../pages/Email/EmailTemplates/BasicAction";
 // import EcommerceAction from "../pages/Email/EmailTemplates/EcommerceAction";
 
@@ -200,7 +200,7 @@ const authProtectedRoutes = [
   // { path: "/apps-chat", component: <Chat /> },
 
   //EMail
-  { path: "/apps-mailbox", component: <MailInbox /> },
+  // { path: "/apps-mailbox", component: <MailInbox /> },
   // { path: "/apps-email-basic", component: <BasicAction /> },
   // { path: "/apps-email-ecommerce", component: <EcommerceAction /> },
 
