@@ -10,14 +10,14 @@ import realwealtdyFooterLogo from "../assets/images/svg/logos/realwealtdy-footer
 import realwealtdy from "../assets/images/svg/logos/realwealtdy.svg";
 
 //import Components
-import SearchOption from '../Components/Common/SearchOption';
-import LanguageDropdown from '../Components/Common/LanguageDropdown';
-import WebAppsDropdown from '../Components/Common/WebAppsDropdown';
-import MyCartDropdown from '../Components/Common/MyCartDropdown';
-import FullScreenDropdown from '../Components/Common/FullScreenDropdown';
+// import SearchOption from '../Components/Common/SearchOption';
+// import LanguageDropdown from '../Components/Common/LanguageDropdown';
+// import WebAppsDropdown from '../Components/Common/WebAppsDropdown';
+// import MyCartDropdown from '../Components/Common/MyCartDropdown';
+// import FullScreenDropdown from '../Components/Common/FullScreenDropdown';
 import NotificationDropdown from '../Components/Common/NotificationDropdown';
 import ProfileDropdown from '../Components/Common/ProfileDropdown';
-import LightDark from '../Components/Common/LightDark';
+// import LightDark from '../Components/Common/LightDark';
 
 import { changeSidebarVisibility } from '../slices/thunks';
 import { useSelector, useDispatch } from "react-redux";
