@@ -5,8 +5,8 @@ import { Navigate } from "react-router-dom";
 
 // Email box
 import MailInbox from "../pages/EmailInbox";
-import BasicAction from "../pages/Email/EmailTemplates/BasicAction";
-import EcommerceAction from "../pages/Email/EmailTemplates/EcommerceAction";
+// import BasicAction from "../pages/Email/EmailTemplates/BasicAction";
+// import EcommerceAction from "../pages/Email/EmailTemplates/EcommerceAction";
 
 //Chat
 
@@ -87,7 +87,7 @@ import Register from "../pages/Authentication/Register";
 //Job pages
 
 
-import ApiKey from "../pages/APIKey/index";
+// import ApiKey from "../pages/APIKey/index";
 
 // Landing Index
 // import OnePage from "../pages/Landing/OnePage";
@@ -201,8 +201,8 @@ const authProtectedRoutes = [
 
   //EMail
   { path: "/apps-mailbox", component: <MailInbox /> },
-  { path: "/apps-email-basic", component: <BasicAction /> },
-  { path: "/apps-email-ecommerce", component: <EcommerceAction /> },
+  // { path: "/apps-email-basic", component: <BasicAction /> },
+  // { path: "/apps-email-ecommerce", component: <EcommerceAction /> },
 
   // //Projects
   // { path: "/apps-projects-list", component: <ProjectList /> },
@@ -379,7 +379,7 @@ const authProtectedRoutes = [
   // { path: "/apps-job-categories", component: <JobCategories /> },
 
   //APIkey
-  { path: "/apps-api-key", component: <ApiKey /> },
+  // { path: "/apps-api-key", component: <ApiKey /> },
 ];
 
 const publicRoutes = [
